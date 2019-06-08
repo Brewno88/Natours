@@ -1,0 +1,114 @@
+.form{
+    &__group:not(:last-child){
+        margin-bottom: 2rem;
+    }
+
+    &__input{
+        font-size: 1.5rem;
+        font-family: inherit; // it's not inherited automatically so we have to declare it back
+        color: inherit; // same as font-family
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        display: block; // so it has it's on line
+        width: 80%; // it's not too long
+        border-bottom: 3px solid transparent; // it's already there but transparent and don't make the label move down when focused
+        transition: all .5s;
+
+        &:focus{
+            outline: none; // this remove the blue border when the input is focused
+            /*border focus is important for people who use it without a mouse 
+            and need to see where they are, so we set our own border when imput is focused*/
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+            
+            /*pseudo-class when we type incorrent value in input*/
+            &:invalid{
+                border-bottom: 3px solid $color-secondary-dark; // add a orange border at the bottom
+            }
+
+            /*this make the placeholder dissapear when input is focused*/
+            &::placeholder{
+                color: transparent;
+            }
+
+        }
+
+        &::placeholder{
+            color: $color-grey-dark-2;
+        }
+    }
+
+    &__label{
+        /*this allign the label to the placeholder*/
+        font-size: 1.2rem; 
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .5s; // transition for label move down
+        /*need to delete these two below if you want the other label's effect */
+        opacity: 0; // transparent in normal state
+        transform: translateY(-4rem); // positioned up in the input
+    }
+
+    /*this make the placeholder move down when input is focused*/
+    &__input:focus + &__label{
+        opacity: 1; // appear when input is focused
+        transform: translateY(0);
+    }
+
+    /*this if you want label goes down when start tiping but placeholder still visible*/
+    // &__input:placeholder-shown + &__label{
+    //     opacity: 0;
+    //     visibility: hidden;
+    //     transform: translateY(-4rem);
+    // }
+
+    &__radio-group{
+        width: 49%;
+        display: inline-block;
+    }
+
+    &__radio-input{
+        display: none; // we hide the default cursor circle so we only use ours
+    }
+
+    &__radio-label{
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: solid 5px $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        &::after{
+            content: ""; // always specify the content when define a pseudo-element (::)
+            display: block;
+            border-radius: 50%;
+            height: 1.35rem;
+            width: 1.35rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+    }
+}

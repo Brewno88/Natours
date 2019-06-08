@@ -1,0 +1,73 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, .15);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem; // 6+ 3 of the transform:translateX-3rem) so left and right are equal
+  font-size: $default-font-size;
+  transform: skewX(-12deg); // skew the element
+
+  /* 
+    As we can't have 2 transform property applied at the same time,
+    we have to apply them manually in each child element 
+    and can't apply it to all (*) with the direct child (>) as below
+  
+    & > * { transform: skewX(12deg); }
+
+  */
+
+  &__shape {
+
+    // shape-outside makes text go around the img, as a cirle in this case
+    shape-outside: circle(
+      50% at 50% 50% /* (radius (based on width/height), at center (X/Y) */
+    ); // in order to work width, height and float must be defined
+    width: 15rem;
+    height: 15rem;
+    float: left;
+
+    // make the elemtnt look like a circle
+    clip-path: circle(50% at 50% 50%);
+
+    // when an element is floated don't mess with margin so better to use transform property
+    transform: translateX(-3rem) skewX(12deg); // this move the img left + skewX (opposit)
+    position: relative;
+  }
+
+  &__img{
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4); // move the img a bit left so the woman is centered and scale the img so will scale back to 1 when we over .story
+    transition: all .5s;
+  }
+
+  &__text{
+    transform: skewX(12deg); // opposite skewX
+  }
+
+  &__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); // centered but a bit down so it will move up when we do the hover effect
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0; // invisible at this initial state
+    transition: all .5s;
+    backface-visibility: hidden; // this fix the little shake we have,
+    // we can use backface-visibility in many other cases when we use animations
+  }
+
+  &:hover &__caption{
+    opacity: 1; // and make "Mary Smith" visible when we hover .story
+    transform: translate(-50%, -50%); // this make "Mary Smith" move up
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1); // scale the img to it's original size
+    filter: blur(3px) brightness(80%); // in brigthness value lower than 100% makes it darker and a value above 100% makes it brighter
+  }
+}

@@ -1,0 +1,78 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+  }
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  //Shaky issue in the animation
+  backface-visibility: hidden;
+  //This property hide the back part, so that part that's behind the element, is hidden
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    //Apply the animationm 'moveInLeft' in this case
+    animation-duration: 1s;
+    //Duration of the animation... EASY
+    animation-timing-function: ease-in;
+    //this function defines how the animation will proceed over time -in this case slower and then faster at the end-
+
+    /* - OTHER ANIMATIONS -
+        animation-delay: 3s; - Delay the animation  in this case 3 seconds -
+        animation-iteration-count: 3; - How many times repeat the animation -
+        */
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    animation: moveInRight 1s ease-in;
+    //Shortend property for the above animations
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  // Font/text's gradient background ** REUSABLE **
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  -webkit-background-clip: text; //this new -webkit- feature clip the "background-image" behind the "text" so we have the linear-gradient behind the text
+  color: transparent; // but in order to see it we need to make the color transparent
+  
+  letter-spacing: .2rem;
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(-3deg) skewX(-15deg) scale(1.05); // Skew(storcere) Y is vertically and X is horizontally, plus scale its size of 1.05
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // X, Y, blur, rgba(color, opacity)
+  }
+}
+
+.heading-tertiary {
+font-size: $default-font-size;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}
