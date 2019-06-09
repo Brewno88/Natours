@@ -9,7 +9,7 @@
   "author": "Br3wn0",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0"
   },
   "dependencies": {
     "jquery": "^3.4.0"
