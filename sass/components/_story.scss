@@ -9,11 +9,11 @@
   font-size: $default-font-size;
   transform: skewX(-12deg); // skew the element
 
-  /* 
+  /*
     As we can't have 2 transform property applied at the same time,
-    we have to apply them manually in each child element 
+    we have to apply them manually in each child element
     and can't apply it to all (*) with the direct child (>) as below
-  
+
     & > * { transform: skewX(12deg); }
 
   */

@@ -18,11 +18,11 @@
 
         &:focus{
             outline: none; // this remove the blue border when the input is focused
-            /*border focus is important for people who use it without a mouse 
+            /*border focus is important for people who use it without a mouse
             and need to see where they are, so we set our own border when imput is focused*/
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
-            
+
             /*pseudo-class when we type incorrent value in input*/
             &:invalid{
                 border-bottom: 3px solid $color-secondary-dark; // add a orange border at the bottom
@@ -42,7 +42,7 @@
 
     &__label{
         /*this allign the label to the placeholder*/
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
         font-weight: 700;
         margin-left: 2rem;
         margin-top: .7rem;
