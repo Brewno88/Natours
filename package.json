@@ -1,6 +1,7 @@
 {
   "name": "natours",
   "version": "1.0.0",
+  "repository": "https://github.com/Brewno88/Natours",
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
