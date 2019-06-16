@@ -1,3 +1,18 @@
+/*
+0 - 600px:        Phone
+601 - 900px:      Tablet portrait
+901 - 1200px:     Tablet landscape
+[1201 - 1800] is where our normal style apply
+1801px +:         Big Desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -35,6 +50,18 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.5%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
 
 body {
   box-sizing: border-box; }
@@ -398,11 +425,11 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg);
-  /* 
+  /*
     As we can't have 2 transform property applied at the same time,
-    we have to apply them manually in each child element 
+    we have to apply them manually in each child element
     and can't apply it to all (*) with the direct child (>) as below
-  
+
     & > * { transform: skewX(12deg); }
 
   */ }
@@ -472,7 +499,7 @@ body {
     transition: all .5s; }
     .form__input:focus {
       outline: none;
-      /*border focus is important for people who use it without a mouse 
+      /*border focus is important for people who use it without a mouse
             and need to see where they are, so we set our own border when imput is focused*/
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
       border-bottom: 3px solid #7ed56f;
