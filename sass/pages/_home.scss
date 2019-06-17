@@ -79,7 +79,7 @@
         rgba($color-white, .9) 0%, /* white start at 0% */
         rgba($color-white, .9) 55%, /* until 50% */
         transparent 50%), /* then is transparent from 50% to 100%*/
-        url(/img/nat-10.jpg
+        url(../img/nat-10.jpg
     );
 
     background-size: cover; // 100% works exactly like "cover" so we can also use values
