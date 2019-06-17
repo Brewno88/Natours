@@ -18,6 +18,16 @@
 
   */
 
+  @include respond (tab-port){
+    width: 95%;
+  }
+
+  @include respond (phone){
+    width: 90%;
+    padding: 4rem;
+    padding-left: 5rem;
+  }
+
   &__shape {
 
     // shape-outside makes text go around the img, as a cirle in this case

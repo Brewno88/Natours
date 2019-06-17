@@ -80,6 +80,10 @@
         cursor: pointer;
         position: relative;
         padding-left: 4.5rem;
+
+        @include respond(phone){
+            padding-left: 3.3rem;
+        }
     }
 
     &__radio-button{

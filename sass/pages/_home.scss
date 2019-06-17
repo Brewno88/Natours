@@ -2,6 +2,18 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
+
+    @include respond (tab-land){
+        padding: 30rem 0;
+    }
+
+    @include respond (tab-port){
+        padding: 28rem 0;
+    }
+
+    @include respond (phone){
+        padding: 20rem 0 25rem 0;
+    }
 }
 
 .section-features {
@@ -18,22 +30,46 @@
     & > * {
         transform: skewY(7deg); // ">" is a DIRECT CHILD selector (in this case is "row")
     }
+
+    @include respond (tab-port){
+        padding: 30rem 0 10rem 0;
+    }
+
+    @include respond (phone){
+        padding: 15rem 0 10rem 0;
+    }
 }
 
 .section-tours {
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
     margin-top: -10rem;
+
+    @include respond (tab-port){
+        padding-top: 20rem;
+    }
+
+    @include respond (phone){
+        padding: 15rem 0 5rem 0;
+    }
 }
 
 .section__stories{
     padding: 15rem 0;
     position: relative;
+
+        @include respond (tab-port){
+        padding: 5rem 0;
+    }
 }
 
 .section-book{
     padding: 15rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond (phone){
+        padding: 10rem 0;
+    }
 }
 
 .book{
@@ -41,7 +77,7 @@
     background-image: linear-gradient(
         105deg, /* this is the angle of the gradient */
         rgba($color-white, .9) 0%, /* white start at 0% */
-        rgba($color-white, .9) 50%, /* until 50% */
+        rgba($color-white, .9) 55%, /* until 50% */
         transparent 50%), /* then is transparent from 50% to 100%*/
         url(/img/nat-10.jpg
     );
@@ -54,5 +90,15 @@
     &__form{
         width: 50%;
         padding: 6rem;
+
+    @include respond (tab-port){
+        padding: 5rem 2rem 2rem 2rem;
+        width: 55%;
+    }
+
+    @include respond (phone){
+        padding: 7rem 2rem 2rem 2rem;
+        width: 55%;
+    }
     }
 }

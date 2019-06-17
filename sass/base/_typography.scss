@@ -3,7 +3,6 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
   }
 
 .heading-primary {
@@ -31,8 +30,13 @@ body {
         animation-delay: 3s; - Delay the animation  in this case 3 seconds -
         animation-iteration-count: 3; - How many times repeat the animation -
         */
+
+        @include respond(phone){
+          letter-spacing: 1rem;
+          font-size: 8.5rem;
+        }
   }
-  
+
   &--sub {
     display: block;
     font-size: 2rem;
@@ -41,6 +45,10 @@ body {
 
     animation: moveInRight 1s ease-in;
     //Shortend property for the above animations
+
+    @include respond(phone){
+      letter-spacing: .7rem;
+    }
   }
 }
 
@@ -53,9 +61,17 @@ body {
   display: inline-block;
   -webkit-background-clip: text; //this new -webkit- feature clip the "background-image" behind the "text" so we have the linear-gradient behind the text
   color: transparent; // but in order to see it we need to make the color transparent
-  
+
   letter-spacing: .2rem;
   transition: all .2s;
+
+  @include respond(tab-port){
+    font-size: 3rem;
+  }
+
+  @include respond(phone){
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(-3deg) skewX(-15deg) scale(1.05); // Skew(storcere) Y is vertically and X is horizontally, plus scale its size of 1.05
