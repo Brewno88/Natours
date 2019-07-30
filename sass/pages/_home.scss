@@ -23,6 +23,7 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)),
       url(../img/nat-4.jpg);
+
     margin-top: -10rem;
     background-size: cover;
     transform: skewY(-7deg); // inclinazione
@@ -77,15 +78,25 @@
     background-image: linear-gradient(
         105deg, /* this is the angle of the gradient */
         rgba($color-white, .9) 0%, /* white start at 0% */
-        rgba($color-white, .9) 55%, /* until 50% */
+        rgba($color-white, .9) 50%, /* until 50% */
         transparent 50%), /* then is transparent from 50% to 100%*/
-        url(../img/nat-10.jpg
-    );
+        url(../img/nat-10.jpg);
 
     background-size: cover; // 100% works exactly like "cover" so we can also use values
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
-    height: 50rem;
+
+    @include respond (phone){
+        padding: 7rem 2rem 2rem 2rem;
+        width: 100%;
+        padding: 5rem 1rem 2rem 1rem;
+
+        background-image: linear-gradient(
+            to right, /* this is the angle of the gradient */
+            rgba($color-white, .9) 0%, /* white start at 0% */
+            rgba($color-white, .9) 100%),
+            url(../img/nat-10.jpg);
+    }
 
     &__form{
         width: 50%;
@@ -93,12 +104,8 @@
 
     @include respond (tab-port){
         padding: 5rem 2rem 2rem 2rem;
-        width: 55%;
+        width: 100%;
     }
 
-    @include respond (phone){
-        padding: 7rem 2rem 2rem 2rem;
-        width: 55%;
-    }
     }
 }

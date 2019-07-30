@@ -1,6 +1,11 @@
 .form{
     &__group:not(:last-child){
         margin-bottom: 2rem;
+
+        @include respond(phone){
+            margin-bottom: 0;;
+
+        }
     }
 
     &__input{
@@ -15,6 +20,10 @@
         width: 80%; // it's not too long
         border-bottom: 3px solid transparent; // it's already there but transparent and don't make the label move down when focused
         transition: all .5s;
+
+        @include respond(phone){
+            width: 100%;
+        }
 
         &:focus{
             outline: none; // this remove the blue border when the input is focused
@@ -69,6 +78,12 @@
     &__radio-group{
         width: 49%;
         display: inline-block;
+
+        &:not(:first-child){
+            @include respond(phone){
+                // margin: 2rem 0 2rem 0;
+            }
+        }
     }
 
     &__radio-input{
@@ -96,6 +111,8 @@
         left: 0;
         top: -.4rem;
 
+        @include respond (phone){
+        }
         &::after{
             content: ""; // always specify the content when define a pseudo-element (::)
             display: block;
@@ -115,4 +132,5 @@
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
     opacity: 1;
     }
+
 }

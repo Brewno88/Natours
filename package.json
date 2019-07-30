@@ -1,7 +1,10 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "repository": "https://github.com/Brewno88/Natours",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brewno88/Natours.git"
+  },
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
@@ -12,5 +15,9 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.12.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Brewno88/Natours/issues"
+  },
+  "homepage": "https://github.com/Brewno88/Natours#readme"
 }

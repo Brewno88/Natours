@@ -26,11 +26,23 @@
         transform: translate(-50%, -50%) scale(.3);
         transition: all .8s .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
+        @include respond(tab-port){
+            text-align: center;
+
+        }
+
     }
 
     &__left{
         width: 33.333333%;
         display: table-cell;
+
+        @include respond(tab-port){
+            width: 100%;
+            display: inline;
+        }
+
+
     }
 
     &__right{
@@ -38,11 +50,22 @@
         display: table-cell; // 2-3
         vertical-align: middle; // 3/3 vertically center it
         padding: 3rem 5rem;
+
+        @include respond(tab-port){
+            width: 100%;
+            display: inline-block;
+        }
     }
 
     &__img{
         display: block;
         width: 100%;
+
+        @include respond(tab-port){
+            display: inline;
+            width: 46%;
+            margin: 0.5rem;
+        }
     }
 
     &__text{
@@ -60,6 +83,23 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto; // creates "-" when a word doesn't fit whole in the raw
+
+        @include respond(tab-port){
+            text-align: justify;
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+    
+            -moz-column-count: 2;
+            -ms-column-gap: 4rem;
+            -webkit-column-rule: 1px solid $color-grey-light-1;
+            column-count: 0; // separate the p in 2 columns
+            column-gap: 0; // create the gap between the 2 columsn
+            column-rule: 0; // creates a vertical line between the 2 columns
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto; // creates "-" when a word doesn't fit whole in the raw
+        }
     }
 
     &:target{

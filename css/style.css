@@ -193,17 +193,33 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.3);
     transition: all 0.8s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        text-align: center; } }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        width: 100%;
+        display: inline; } }
   .popup__right {
     width: 66.666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: inline-block; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        display: inline;
+        width: 46%;
+        margin: 0.5rem; } }
   .popup__text {
     text-align: justify;
     font-size: 1.4rem;
@@ -218,6 +234,21 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 56.25em) {
+      .popup__text {
+        text-align: justify;
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        -moz-column-count: 2;
+        -ms-column-gap: 4rem;
+        -webkit-column-rule: 1px solid #f7f7f7;
+        column-count: 0;
+        column-gap: 0;
+        column-rule: 0;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -321,7 +352,8 @@ body {
       .composition__photo {
         float: left;
         position: relative;
-        width: 33.3333333%; } }
+        width: 33.3333333%;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
@@ -465,6 +497,34 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card .card__details {
+        padding: 0 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 6rem; } }
 
 .story {
   width: 75%;
@@ -486,7 +546,7 @@ body {
   */ }
   @media (max-width: 56.25em) {
     .story {
-      width: 95%; } }
+      width: 100%; } }
   @media (max-width: 37.5em) {
     .story {
       width: 90%;
@@ -544,6 +604,9 @@ body {
   /*this if you want label goes down when start tiping but placeholder still visible*/ }
   .form__group:not(:last-child) {
     margin-bottom: 2rem; }
+    @media (max-width: 37.5em) {
+      .form__group:not(:last-child) {
+        margin-bottom: 0; } }
   .form__input {
     font-size: 1.5rem;
     font-family: inherit;
@@ -556,6 +619,9 @@ body {
     width: 80%;
     border-bottom: 3px solid transparent;
     transition: all .5s; }
+    @media (max-width: 37.5em) {
+      .form__input {
+        width: 100%; } }
     .form__input:focus {
       outline: none;
       /*border focus is important for people who use it without a mouse
@@ -930,19 +996,20 @@ body {
       padding: 10rem 0; } }
 
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 55%, transparent 50%), url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 37.5em) {
+    .book {
+      padding: 7rem 2rem 2rem 2rem;
+      width: 100%;
+      padding: 5rem 1rem 2rem 1rem;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
     @media (max-width: 56.25em) {
       .book__form {
         padding: 5rem 2rem 2rem 2rem;
-        width: 55%; } }
-    @media (max-width: 37.5em) {
-      .book__form {
-        padding: 7rem 2rem 2rem 2rem;
-        width: 55%; } }
+        width: 100%; } }
