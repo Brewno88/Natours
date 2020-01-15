@@ -1,0 +1,111 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+
+    @include respond (tab-land){
+        padding: 30rem 0;
+    }
+
+    @include respond (tab-port){
+        padding: 28rem 0;
+    }
+
+    @include respond (phone){
+        padding: 20rem 0 25rem 0;
+    }
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+      url(../img/nat-4.jpg);
+
+    margin-top: -10rem;
+    background-size: cover;
+    transform: skewY(-7deg); // inclinazione
+
+    & > * {
+        transform: skewY(7deg); // ">" is a DIRECT CHILD selector (in this case is "row")
+    }
+
+    @include respond (tab-port){
+        padding: 30rem 0 10rem 0;
+    }
+
+    @include respond (phone){
+        padding: 15rem 0 10rem 0;
+    }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+
+    @include respond (tab-port){
+        padding-top: 20rem;
+    }
+
+    @include respond (phone){
+        padding: 15rem 0 5rem 0;
+    }
+}
+
+.section__stories{
+    padding: 15rem 0;
+    position: relative;
+
+        @include respond (tab-port){
+        padding: 5rem 0;
+    }
+}
+
+.section-book{
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond (phone){
+        padding: 10rem 0;
+    }
+}
+
+.book{
+    // this make a similar "clip-path" effect on the img but using "linear-gradient" instead
+    background-image: linear-gradient(
+        105deg, /* this is the angle of the gradient */
+        rgba($color-white, .9) 0%, /* white start at 0% */
+        rgba($color-white, .9) 50%, /* until 50% */
+        transparent 50%), /* then is transparent from 50% to 100%*/
+        url(../img/nat-10.jpg);
+
+    background-size: cover; // 100% works exactly like "cover" so we can also use values
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+    @include respond (phone){
+        padding: 7rem 2rem 2rem 2rem;
+        width: 100%;
+        padding: 5rem 1rem 2rem 1rem;
+
+        background-image: linear-gradient(
+            to right, /* this is the angle of the gradient */
+            rgba($color-white, .9) 0%, /* white start at 0% */
+            rgba($color-white, .9) 100%),
+            url(../img/nat-10.jpg);
+    }
+
+    &__form{
+        width: 50%;
+        padding: 6rem;
+
+    @include respond (tab-port){
+        padding: 5rem 2rem 2rem 2rem;
+        width: 100%;
+    }
+
+    }
+}

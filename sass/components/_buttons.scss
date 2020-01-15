@@ -1,0 +1,108 @@
+.btn {
+  //Pseudo-classes select regular elements but under certain conditions
+  &, // <-- this apply all the above to <button> as well not only <a>
+  &:link,
+  &:visited {
+    //pseudo class':link' is the first state of the link
+    //pseudo class ':visited' is the second (when you've clicked the link)
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s; //issue in the video where if I put 'all' instead of transform transition is applied also to .btn-white so also all the properties inside it get transformed
+    position: relative;
+    font-size: $default-font-size;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover{
+    //pseudo class ':hover' is when you pass over with the mouse
+    transform: translateY(-3px);
+    box-shadow: 0 2rem 1rem rgba($color-black, 0.4);
+
+
+    // this createS a PULSE animation of the button when hovered and with
+    &::after {
+      transition: 1s all; // time of the transition
+      transform: scaleX(1.4) scaleY(1.6); // increase the buton size
+      opacity: 0; // make it invisible so it looks like PULSE
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    //pseudo class ':active' is when you click it
+    transform: translateY(-1px);
+    box-shadow: 0 .5 1rem rgba($color-black, .2);
+  }
+
+  //Pseudo-elements effectively create new elements that are not specified in the markup of the document and can be manipulated much like a regular element.
+  &::after {
+    //the pseudo-element ::after adds a "fake" element right after the element that we're selecting (.btn in this case)
+    content: ""; //necessary, we leave it blank as we don't want to add any text
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; //posiziona lo pseudo-element dietro l'elemento normale (.btn)
+    transition: all .4s; //this add the animation when we're out of the element, so if we don't want it when we un-hoven simply set 0s
+  }
+
+  //normal state of the background
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  // the button moves app and appear at the first loading
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.5s;
+    animation-fill-mode: backwards; //the 0% property in the @keyframe moveInBottom is applied before the animation is displayer
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited{
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px)
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+}
