@@ -10,7 +10,7 @@
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.css",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "deploy": "gh-pages -d"
+    "deploy": "gh-pages -d ."
   },
   "author": "Br3wn0",
   "license": "ISC",
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Brewno88/Natours/issues"
   },
-  "homepage": "https://github.com/Brewno88/Natours",
+  "homepage": "https://brewno88.github.io/Natours",
   "dependencies": {
     "gh-pages": "^2.2.0"
   }
