@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Brewno88/Natours/issues"
   },
-  "homepage": "https://github.com/Brewno88/Natours",
+  "homepage": "https://brewno88.github.io/Natours",
   "dependencies": {
     "gh-pages": "^2.2.0"
   }
