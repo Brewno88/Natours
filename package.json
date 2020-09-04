@@ -15,7 +15,7 @@
   "author": "Br3wn0",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.1"
   },
   "bugs": {
     "url": "https://github.com/Brewno88/Natours/issues"
